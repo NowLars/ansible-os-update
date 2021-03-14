@@ -42,7 +42,6 @@
   notify:
   - reboot
 
-- meta: flush_handlers
 
 # autoremove bug in anisble module
 #- name: cleanup old kernel via apt-get autoremove

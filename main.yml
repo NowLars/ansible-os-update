@@ -1,13 +1,27 @@
-- include: facts.yml
-
-- name: Update Systems
-  hosts: all
+- name: Update Workstations OS
+  hosts: workstations
   become: true
   roles:
     - { role: debian, when: ansible_os_family == "Debian" }
     - { role: centos, when: ansible_os_family == "RedHat" }
-    - { role: freebsd, when: ansible_os_family == "FreeBSD" }
-    - { role: smartos, when: ansible_os_family == "Solaris" and ansible_distribution == "SmartOS" }
-  handlers:
-    - include: handlers/logging.yml
-    - include: handlers/reboot.yml
+   
+- name: Update web_servers OS
+  hosts: web_servers
+  become: true
+  roles:
+    - { role: debian, when: ansible_os_family == "Debian" }
+    - { role: centos, when: ansible_os_family == "RedHat" }
+
+- name: Update db_servers OS
+  hosts: db_servers
+  become: true
+  roles:
+    - { role: debian, when: ansible_os_family == "Debian" }
+    - { role: centos, when: ansible_os_family == "RedHat" }
+
+- name: Update file_servers OS
+  hosts: file_servers
+  become: true
+  roles:
+    - { role: debian, when: ansible_os_family == "Debian" }
+    - { role: centos, when: ansible_os_family == "RedHat" }
