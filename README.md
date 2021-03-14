@@ -12,7 +12,6 @@ Using the native distribution packaging system. Checks for required reboots and 
 |GNU/Linux|Debian| Debian,Ubuntu,... | Debian| amd64,armv6l |
 |GNU/Linux|RedHat| RedHat,Centos,OracleLinux | Centos | amd64 |
 
-more distributions can follow
 
 ## Usage
 
